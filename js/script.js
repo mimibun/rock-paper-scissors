@@ -18,7 +18,6 @@ function getComputerChoice() {
 function getPlayerChoice() { 
     while (true) {
         let playerRawInput =  prompt("Rock...paper...scissors: What is your hand? ").toLowerCase();
-        console.log("raw player: " + playerRawInput);
 
         switch (playerRawInput) {
             case "rock":
@@ -62,3 +61,8 @@ function playRound(humanChoice, computerChoice) {
         }
     }
 }
+
+for (i = 0; i < 5; i++) {
+    playRound(getPlayerChoice(), getComputerChoice());
+}
+console.log(`Final score: You:${humanScore} - Computer:${computerScore}`)
