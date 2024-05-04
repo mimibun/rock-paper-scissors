@@ -1,20 +1,38 @@
+let computerScore = 0;
+let playerScore = 0;
+
+
 function getComputerChoice() {
     const randomNum = Math.floor(Math.random() * 3);
-    let choiceString = '';
 
     switch (randomNum) {
         case 0:
-            choiceString = 'Rock';
-            break;
+            return 'Rock';
         case 1:
-            choiceString = 'Paper';
-            break;
+            return 'Paper';
         case 2:
-            choiceString = 'Scissors';
-            break;
+            return 'Scissors';
     }
-
-    return choiceString;
 }
 
-getComputerChoice();
+function getPlayerChoice() { 
+    while (true) {
+        let playerRawInput =  prompt("Rock...paper...scissors: What is your hand? ").toLowerCase();
+        console.log("raw player: " + playerRawInput);
+
+        switch (playerRawInput) {
+            case "rock":
+                return "Rock";
+            case "paper":
+                return "Paper";
+            case "scissors":
+                return "Scissors";
+            default:
+                continue;
+        }
+    }
+}
+
+console.log("player: " + getPlayerChoice());
+
+console.log("pomputer: " + getComputerChoice());
